@@ -1,0 +1,130 @@
+<div>
+
+  <div class="card o-hidden border-0 shadow-lg my-4 col-lg-12 ">
+    <div class="card-body p-0 ">
+      <!-- Nested Row within Card Body -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="p-5">
+            <div class="text-center .bg-gradient-success">
+              <h1 class="h4 text-gray-900 mb-4 ">Formulaire de soummission d'une structure d'accueil
+              </h1>
+            </div>
+
+            <div class="px-3 py-5 bg-gradient-danger text-white" *ngIf="submitted && erreur" >
+              <p>
+                Une erreur a survenu lors de l'enregistrement.Veuillez reessayer svp.
+              </p>
+            </div>
+            <div class="px-3 py-5 bg-gradient-success text-white" *ngIf="submitted && !erreur">
+              <p>
+               Enregistrement reussi avec succes.
+              <br/>
+              Nous vous contacterons pour la suite.
+              </p>
+            </div>
+            <form class="user" (ngSubmit)="onSubmit()">
+              <div class="form-group row" *ngFor="let c of candidat1 ">
+
+                 
+                
+              </div>
+              
+
+              <div class="form-group row">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Nom</label>
+                  <input type="text" id="nom" required [(ngModel)]="structureAccueil.libelle" name="nom"
+                  class=" form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                   </div>  
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Téléphone</label>
+                  <input type="tel" id="tel" required [(ngModel)]="structureAccueil.tel" name="telephone"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div> 
+                
+              </div>
+
+
+              <div class="form-group row">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label   style="margin-left: 20px;" >Email</label>
+                  <input type="email" id="email" required [(ngModel)]="structureAccueil.email" name="email"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div>
+                <div class="col-sm-4">
+                  <label style="margin-left: 20px;" >Adresse</label>
+                  <input type="text" id="libelle" required [(ngModel)]="structureAccueil.adresse" name="adresse"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div>
+                
+                
+              </div>
+             
+              <div class="form-group row">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;" >Document de la structure()</label>
+                  <!-- <input type="file" name="fichier"
+                    class="form-control form-control-user text-center .text-gray-900" id="fichier"
+                    [ngModelOptions]="{standalone: true}" placeholder=""> -->
+                </div>
+              
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label  for="libelle" style="margin-left: 20px;" >Région</label>
+                  <select (change)="choixRegion($event)" [(ngModel)]="region">
+                    <option>Selectionner une region</option>
+                    <option *ngFor="let region of listRegions" [value]="region.codeRegion" >{{region.libelle}}</option>
+
+                  </select>
+                  
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label   style="margin-left: 20px;" >Mot de passe</label>
+                  <input type="password" id="password" required [(ngModel)]="structureAccueil.motDePasse" name="password"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div>
+                <div class="col-sm-4">
+                  <label style="margin-left: 20px;" >Repeter le mot de passe</label>
+                  <input type="password" id="password2" required [(ngModel)]="motDePasse2" name="password2"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div>
+                
+                
+              </div>
+             
+              <hr>
+              <div class="form-group row">
+                <div class="col-sm-4">
+                  <button class="btn btn-danger btn-user btn-block " [routerLink]="[ '/structures' ]">
+                    Annuler
+                  </button>
+                </div>
+                <div class="col-sm-4">
+                  <button type="submit" class="btn btn-primary btn-user btn-block ">
+                    Soumettre
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
