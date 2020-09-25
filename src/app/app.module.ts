@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,36 +43,42 @@ import { PartenaireFinancierComponent } from './partenaire-financier/partenaire-
 import { FinanceComponent } from './finance/finance.component';
 import { ProjetEnCoursComponent } from './volontaire/projet/projet-en-cours/projet-en-cours.component';
 import { ProjetExpireComponent } from './volontaire/projet/projet-expire/projet-expire.component';
+import { AuthGaurdService } from './services/administrationServices/auth-gaurd.service';
+import { LoginComponent } from './administration/login/login.component';
+import { LogoutComponent } from './administration/logout/logout.component';
 
 
 
 
 const appRoutes: Routes = [
   
-  {path: 'projets', component: ProjetComponent},
-  {path: 'projet/new', component: ProjetFormComponent},
-  {path: 'projets/encours', component: ProjetEnCoursComponent},
-  {path: 'detailsProjet/:projet', component: DetailsProjetComponent},
-  {path: 'homes', component: HomeComponent},
-  {path: 'regions', component: RegionComponent},
-  {path: 'region/new', component: RegionFormComponent},
-  {path: 'provinces', component: ProvinceComponent},
-  {path: 'province/new', component: ProvinceFormComponent},
-  {path: 'communes', component: CommuneComponent},
-  {path: 'commune/new', component: ComuneFormComponent},
-  {path: 'structures', component: StructureComponent},
-  {path: 'structure/new', component: StructureFormComponent},
-  {path: 'specialites', component: SpecialiteComponent},
-  {path: 'specialite/new', component: SpecialiteFormComponent},
-  {path: 'personnes', component: PersonneComponent},
-  {path: 'personne/new', component: PersonneFormComponent},
-  {path: 'personne/edit', component: EditPersonneComponent},
-  {path: 'personne/login', component: PersonLoginComponent},
-  {path: 'candidatures', component: CandidatureComponent},
-  {path: 'candidature/new', component: CandidatureFormComponent },
-  {path: 'structure/login', component: LoginstructureComponent },
-  {path: 'personne/dashboard', component: PersonneDashboardComponent },
-  {path: 'partenaireFinancier/new', component: PartenaireFinancierComponent },
+  {path: 'projets', component: ProjetComponent, canActivate:[AuthGaurdService]},
+  {path: 'projet/new', component: ProjetFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'detailsProjet', component: DetailsProjetComponent, canActivate:[AuthGaurdService]},
+  {path: 'projets/encours', component: ProjetEnCoursComponent,canActivate:[AuthGaurdService]},
+  {path: 'detailsProjet/:projet', component: DetailsProjetComponent,canActivate:[AuthGaurdService]},
+  {path: 'homes', component: HomeComponent, canActivate:[AuthGaurdService]},
+  {path: 'regions', component: RegionComponent, canActivate:[AuthGaurdService]},
+  {path: 'region/new', component: RegionFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'provinces', component: ProvinceComponent, canActivate:[AuthGaurdService]},
+  {path: 'province/new', component: ProvinceFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'communes', component: CommuneComponent, canActivate:[AuthGaurdService]},
+  {path: 'commune/new', component: ComuneFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'structures', component: StructureComponent, canActivate:[AuthGaurdService]},
+  {path: 'structure/new', component: StructureFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'specialites', component: SpecialiteComponent, canActivate:[AuthGaurdService]},
+  {path: 'specialite/new', component: SpecialiteFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'personnes', component: PersonneComponent, canActivate:[AuthGaurdService]},
+  {path: 'personne/new', component: PersonneFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'personne/edit', component: EditPersonneComponent, canActivate:[AuthGaurdService]},
+  {path: 'personne/login', component: PersonLoginComponent, canActivate:[AuthGaurdService]},
+  {path: 'candidatures', component: CandidatureComponent, canActivate:[AuthGaurdService]},
+  {path: 'candidature/new', component: CandidatureFormComponent , canActivate:[AuthGaurdService]},
+  {path: 'structure/login', component: LoginstructureComponent, canActivate:[AuthGaurdService] },
+  {path: 'personne/dashboard', component: PersonneDashboardComponent , canActivate:[AuthGaurdService]},
+  {path: 'partenaireFinancier/new', component: PartenaireFinancierComponent, canActivate:[AuthGaurdService] },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent , canActivate:[AuthGaurdService]},
 
   {path: '', redirectTo:'homes',pathMatch:'full'},
   {path: '**', redirectTo:'homes'}
@@ -110,8 +115,9 @@ const appRoutes: Routes = [
     PartenaireFinancierComponent,
     FinanceComponent,
     ProjetEnCoursComponent,
-    ProjetExpireComponent
-  
+    ProjetExpireComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

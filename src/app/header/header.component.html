@@ -11,7 +11,11 @@
 
   <title>SGSV</title>
 
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
 </head>
 
@@ -21,10 +25,18 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
+<<<<<<< HEAD
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center"  href="index.html">
+=======
+    <ul *ngIf="loginService.isUserLoggedIn()" class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -51,6 +63,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
+<<<<<<< HEAD
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cog"></i>
           <span>Administration</span>
@@ -67,21 +80,52 @@
       </li>
       <li class="nav-item active" >
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+=======
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
+          aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Administration</span>
+        </a>
+        <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Listes:</h6>
+            <a class="collapse-item" [routerLink]="[ '/regions' ]">Région</a>
+            <a class="collapse-item" [routerLink]="[ '/provinces' ]">province</a>
+            <a class="collapse-item" [routerLink]="[ '/communes' ]">Commune</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
           <i class="fas fa-fw fa-cog"></i>
           <span>Projets</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded show">
             <h6 class="collapse-header">Listes:</h6>
+<<<<<<< HEAD
             <a class="collapse-item"  [routerLink]="[ '/personnes' ]">Personne</a>
             <a class="collapse-item"  [routerLink]="[ '/projets' ]">Projet</a>
             <a class="collapse-item"  [routerLink]="[ '/candidatures' ]">Candidature</a>
             <a class="collapse-item"  [routerLink]="[ '/projets', 'encours' ]">PEnCours</a>
+=======
+            <a class="collapse-item" [routerLink]="[ '/personnes' ]">Personne</a>
+            <a class="collapse-item" [routerLink]="[ '/projets' ]">Projet</a>
+            <a class="collapse-item" [routerLink]="[ '/candidatures' ]">Candidature</a>
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
           </div>
         </div>
       </li>
 
+<<<<<<< HEAD
      
+=======
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -92,7 +136,12 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+=======
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
           <i class="fas fa-fw fa-folder"></i>
           <span>Pages</span>
         </a>
@@ -136,26 +185,39 @@
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
+<<<<<<< HEAD
     <div id="content-wrapper" class="d-flex flex-column" >
+=======
+    <div id="content-wrapper" class="d-flex flex-column">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
       <!-- Main Content -->
       <div id="content">
 
         <!-- Topbar -->
+<<<<<<< HEAD
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" >
+=======
+        <nav  *ngIf="loginService.isUserLoggedIn()" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
 
+<<<<<<< HEAD
          
+=======
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
+<<<<<<< HEAD
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
@@ -164,6 +226,19 @@
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+=======
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -173,6 +248,7 @@
                 </form>
               </div>
             </li>
+<<<<<<< HEAD
           <!-- Les menus déroulants -->
 
           <li class=" dropdown no-arrow mx-1">
@@ -319,12 +395,87 @@
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+=======
+            <!-- Les menus déroulants -->
+
+            <li class=" dropdown no-arrow mx-1">
+              <a *ngIf="loginService.isUserLoggedIn()" class="nav-link dropdown-toggle " href="#" id="alertsDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <!-- Counter - Alerts -->
+                <i class="dropdown-item d-flex align-items-right"></i>
+                <h6>CANDIDATURE</h6>
+
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                <a class="dropdown-item" [routerLink]="[ '/candidature' , 'new' ]">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Candidater
+                </a>
+                <a class="dropdown-item" routerLink='etudiants/idform'>
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Listes des Candidatures
+                </a>
+                <a class="dropdown-item" routerLink="Listenseignants">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Affectattion
+                </a>
+
+
+              </div>
+
+            <li class=" dropdown no-arrow mx-1">
+              <a *ngIf="loginService.isUserLoggedIn()" class="nav-link dropdown-toggle " href="#" id="alertsDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <!-- Counter - Alerts -->
+                <i class="dropdown-item d-flex align-items-right"></i>
+                <h6>ENREGISTREMENT</h6>
+
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" routerLink="Listenseignants">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Filières
+                </a>
+                <a class="dropdown-item" routerLink="utilisateur">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Partenaires
+                </a>
+                <a class="dropdown-item" routerLink='etudiants/idform'>
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Bénéficiaires
+                </a>
+                <a class="dropdown-item" routerLink="Listenseignants">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Formateurs
+                </a>
+                <a class="dropdown-item" routerLink="Listenseignants">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Programmes
+                </a>
+              </div>
+              <!--   routerLinActive="active" *ngIf="!isAuth"-->
+              <!-- End Les menus déroulants -->
+              <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a *ngIf="loginService.isUserLoggedIn()" class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
                 <span class="badge badge-danger badge-counter">7</span>
               </a>
               <!-- Dropdown - Messages -->
+<<<<<<< HEAD
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+=======
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                 <h6 class="dropdown-header">
                   Message Center
                 </h6>
@@ -334,7 +485,12 @@
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
+<<<<<<< HEAD
                     <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+=======
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+                      having.</div>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                   </div>
                 </a>
@@ -344,7 +500,12 @@
                     <div class="status-indicator"></div>
                   </div>
                   <div>
+<<<<<<< HEAD
                     <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+=======
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+                      sent to you?</div>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     <div class="small text-gray-500">Jae Chun · 1d</div>
                   </div>
                 </a>
@@ -354,7 +515,12 @@
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
+<<<<<<< HEAD
                     <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+=======
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+                      far, keep up the good work!</div>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                   </div>
                 </a>
@@ -364,7 +530,12 @@
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
+<<<<<<< HEAD
                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+=======
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+                      say this to all dogs, even if they aren't good...</div>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     <div class="small text-gray-500">Chicken the Dog · 2w</div>
                   </div>
                 </a>
@@ -374,6 +545,7 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
+<<<<<<< HEAD
         <!-- Nav Item - User Information -->
     <li class=" dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#"  id="userDropdown" role="button" data-toggle="dropdown"
@@ -404,6 +576,41 @@
           </a>
       </div>
     </li>
+=======
+            <!-- Nav Item - User Information -->
+            <li class=" dropdown no-arrow">
+              <a *ngIf="loginService.isUserLoggedIn()" class="nav-link dropdown-toggle" href="#" id="userDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Iro Bassirou</span>
+                <img class="img-profile rounded-circle" style="width: 45px;height: 45px;">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a *ngIf="loginService.isUserLoggedIn()" class="dropdown-item" routerLink="/login">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="dropdown-item" routerLink="Listspecialite">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Paramètres
+                </a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="dropdown-item">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                  Connexion
+
+                </a>
+                <div class="dropdown-divider"></div>
+                <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="dropdown-item">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Déconnexion
+                </a>
+              </div>
+            </li>
+
+            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
           </ul>
 
@@ -411,12 +618,19 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+<<<<<<< HEAD
         <div class="container-fluid" >
 
       <router-outlet>
         
       </router-outlet>
       
+=======
+        <div class="container-fluid">
+
+          <router-outlet></router-outlet>
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
         </div>
         <!-- /.container-fluid -->
@@ -425,7 +639,11 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
+<<<<<<< HEAD
       <footer class="sticky-footer bg-white">
+=======
+      <footer *ngIf="loginService.isUserLoggedIn()" class="sticky-footer bg-white">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Volontaire 2020</span>
@@ -446,7 +664,12 @@
   </a>
 
   <!-- Logout Modal-->
+<<<<<<< HEAD
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+=======
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -464,8 +687,16 @@
     </div>
   </div>
 
+<<<<<<< HEAD
  
 
 </body>
 
 </html>
+=======
+
+
+</body>
+
+</html>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c

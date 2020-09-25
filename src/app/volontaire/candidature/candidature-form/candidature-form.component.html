@@ -12,6 +12,7 @@
             </div>
             <form class="user" (ngSubmit)="onSubmit()">
               <div class="form-group row" *ngFor="let c of candidat1 ">
+<<<<<<< HEAD
 
                 <div class="col-sm-4 mb-3 mb-sm-0">
                   <label style="margin-left: 20px;">Nom</label>
@@ -27,6 +28,11 @@
                 <div class="col-sm-4">
                   <label style="margin-left: 20px;" >Sexe</label>
                   <input type="text" id="libelle" required [(ngModel)]="candidature.personne.sexe" name="libelle"
+=======
+                <div class="col-sm-4">
+                  <label style="margin-left: 20px;" >Statut</label>
+                  <input type="text" id="statut" required [(ngModel)]="candidature.statut" name="statut"
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                     class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                     >
                 </div>
@@ -35,10 +41,18 @@
               <div class="form-group row">
 
                 <div class="col-sm-4 mb-3 mb-sm-0">
+<<<<<<< HEAD
                   <label  for="codeSpecialite" style="margin-left: 20px;" >Specialité</label>
                   <input type="text" id="specialite" required [(ngModel)]="candidature.specialite" name="specialite"
                     class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                     >
+=======
+                  <label  for="libellespecialite" style="margin-left: 20px;" >Spécialité</label>
+                  <select class=" form-control" (change)="choixSpec($event)" [(ngModel)]="specialite">
+                    <option>Selectionner une Specialité</option>
+                    <option *ngFor="let specialite of Listspecialites" [value]="specialite.codeSpecialite" >{{specialite.libelleLong}}</option>
+                  </select>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                 </div>
                 <div class="col-sm-4 mb-3 mb-sm-0">
                   <label style="margin-left: 20px;" >Date Dépot</label>
@@ -46,17 +60,27 @@
                     class="form-control form-control-user text-center" id="date"
                     [ngModelOptions]="{standalone: true}" placeholder="">
                 </div>
+<<<<<<< HEAD
                 <div class="col-sm-4">
                   <label style="margin-left: 20px;" >Nationnalité</label>
                   <input type="text" id="nationalite" required [(ngModel)]="candidature.nationalite" name="nationalite"
                     class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                     >
+=======
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label  for="nompersonne" style="margin-left: 20px;" >Nom</label>
+                  <select class=" form-control" (change)="choixPersonne($event)" [(ngModel)]="personne">
+                    <option>Selectionner une personne</option>
+                    <option *ngFor="let personne of ListPersonnes" [value]="personne.codePersonne" >{{personne.nom}}</option>
+                  </select>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
                 </div>
               </div>
              
               <div class="form-group row">
 
                 <div class="col-sm-4 mb-3 mb-sm-0">
+<<<<<<< HEAD
                   <label style="margin-left: 20px;" >Joindre des Fichiers</label>
                   <input type="text" [(ngModel)]="candidature.fichier" name="fichier"
                     class="form-control form-control-user text-center .text-gray-900" id="fichier"
@@ -81,6 +105,30 @@
                 </div>
               </div>
              
+=======
+                  <label  for="projet" style="margin-left: 20px;" >Projet</label>
+                  <select class=" form-control" (change)="choixProjet($event)" [(ngModel)]="projet">
+                    <option>Selectionner un Projet</option>
+                    <option *ngFor="let projet of ListProjets" [value]="projet.codeProjet" >{{projet.libelle}}</option>
+                  </select>
+                  
+                </div>
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label  for="libelleregion" style="margin-left: 20px;" >Région</label>
+                  <select class=" form-control" (change)="choixRegion($event)" [(ngModel)]="region">
+                    <option>Selectionner une region</option>
+                    <option *ngFor="let region of ListRegions" [value]="region.codeRegion" >{{region.libelle}}</option>
+                  </select>
+                  
+                </div>
+                <div class="col-sm-4">
+                  <label style="margin-left: 20px;" >Téléphone</label>
+                  <input type="text" id="tel" required [(ngModel)]="telephone" name="tel"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                  >
+                </div>
+              </div>
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
               <hr>
               <div class="form-group row">
                 <div class="col-sm-4">

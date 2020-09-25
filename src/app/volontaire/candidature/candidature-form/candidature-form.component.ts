@@ -9,6 +9,12 @@ import { SpecialiteService } from 'src/app/services/volontaire/specialite.servic
 import { Specialite } from 'src/app/Models/Specialite.model';
 import { PersonneService } from 'src/app/services/volontaire/personne.service';
 import { ProjetService } from 'src/app/services/volontaire/projet.service';
+<<<<<<< HEAD
+=======
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Personne } from 'src/app/Models/Personne.model';
+import { Projet } from 'src/app/Models/Projet.model';
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
 @Component({
   selector: 'app-candidature-form',
@@ -18,6 +24,7 @@ import { ProjetService } from 'src/app/services/volontaire/projet.service';
 export class CandidatureFormComponent implements OnInit {
 
   ListCandidatures: Candidature[] = [] ;
+<<<<<<< HEAD
   ListRegions: any ;
   Listspecialites:any;
   ListPersonnes: any;
@@ -43,6 +50,23 @@ candidat2 = [
 ];
   
   constructor(private httpClient:HttpClient,private personneService: PersonneService, private specialiteservice: SpecialiteService ,private regionService:RegionService, private candidatureService:CandidatureService,private projetService: ProjetService, private router: Router) { }
+=======
+  ListRegions: {} ;
+  Listspecialites: {};
+  ListPersonnes:{};
+  ListProjets:{};
+  form:FormGroup;
+  submitted = false;
+  personne : string;
+  region : string;
+  specialite : string;
+  projet : string;
+
+  candidature: Candidature = new Candidature();
+  affecter: "VOLONTAIREAFFEC0125478";
+
+  constructor( private fb: FormBuilder, private httpClient:HttpClient,private personneService: PersonneService, private specialiteservice: SpecialiteService ,private regionService:RegionService, private candidatureService:CandidatureService,private projetService: ProjetService, private router: Router) { }
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
   ngOnInit() {
     this.onPreCond();
@@ -56,6 +80,11 @@ candidat2 = [
   onPreCond(){
     this.getListSpecialites();
     this.getListRegion();
+<<<<<<< HEAD
+=======
+    this.getListPersonne();
+    this.getListProjet();
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
   }
 
   save() {
@@ -70,21 +99,44 @@ candidat2 = [
     this.router.navigate(['/candidatures']);
     /**
      *     console.log(" Candidature ===>: "+this.candidature.codeCandidature+" \n Region ===>: "+this.region.libelle")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
      */
 
   }
 
   onSubmit() {
+<<<<<<< HEAD
     this.submitted = true;
     this.save();    
   }
+=======
+    
+    //this.structureAccueil.region=this.region;
+   console.log("REGION :"+this.region);
+   console.log("Personne :"+this.personne);
+   console.log("Projet :"+this.projet);
+   console.log("Spec :"+this.specialite);
+   this.submitted=true;
+   this.candidature.specialite.codeSpecialite = this.specialite;
+   this.candidature.personne.codePersonne = this.personne;
+   this.candidature.region.codeRegion = this.region;
+   this.candidature.projet.codeProjet = this.projet;
+   this.save();    
+ }
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
 
   getListRegion(): void {
     this.regionService.getRegionList().subscribe(
       data => {
+<<<<<<< HEAD
         this.ListRegions = data
+=======
+        this.ListRegions = data;
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
       },
       err => console.error(err),
       () => console.log('région récupérées avec Succès', this.ListRegions)
@@ -97,7 +149,11 @@ candidat2 = [
     
     this.specialiteservice.getSpecialiteList().subscribe(
       data =>{
+<<<<<<< HEAD
         this.Listspecialites = data
+=======
+        this.Listspecialites = data;
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
       },
       err => console.error(err),
       () => console.log("specialité recuperer avec succès" , this.Listspecialites)
@@ -125,5 +181,36 @@ candidat2 = [
     );
   }
 
+<<<<<<< HEAD
+=======
+ 
+  choixRegion(event :any){
+    this.region=event.target.value;
+    
+    console.log("Region ===>:" + this.region);
+
+  }
+
+  choixSpec(event :any){
+    this.specialite=event.target.value;
+   
+    console.log( "Spécialite ===>: "+ this.specialite);
+
+  }
+  choixProjet(event :any){
+    
+    this.projet=event.target.value;
+    console.log("Projet ===>: "+ this.projet);
+
+  }
+  choixPersonne(event :any){
+    this.personne=event.target.value;
+    console.log("Personne ===>:" + this.personne);
+
+  }
+
+
+
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
 }

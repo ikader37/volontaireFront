@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { PartenaireFinancier } from '../Models/PartenaireFinancier.model';
 import { PartenaireFinancierService } from '../services/administrationServices/partenaire-financier.service';
+=======
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
 
 @Component({
   selector: 'app-finance',
@@ -10,6 +13,7 @@ import { PartenaireFinancierService } from '../services/administrationServices/p
 })
 export class FinanceComponent implements OnInit {
 
+<<<<<<< HEAD
   partenaireFinanciers:PartenaireFinancier[];
   partenaireFinancier:PartenaireFinancier=new PartenaireFinancier();
 
@@ -25,6 +29,11 @@ export class FinanceComponent implements OnInit {
         this.partenaireFinanciers=data;
       }
     );
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> 5c3c1e62bc02bb798ef01451769d5eb7c286725c
   }
 
 }
