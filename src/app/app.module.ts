@@ -16,7 +16,7 @@ import { ProvinceComponent } from './administration/province/province.component'
 import { ProvinceFormComponent } from './administration/province/province-form/province-form.component';
 import { CommuneComponent } from './administration/commune/commune.component';
 import { ComuneFormComponent } from './administration/commune/comune-form/comune-form.component';
-import { PathLocationStrategy } from '@angular/common';
+import { DatePipe, PathLocationStrategy } from '@angular/common';
 import { StructureComponent } from './structure/structure.component';
 
 import { RegionService } from './services/administrationServices/region.service';
@@ -42,6 +42,8 @@ import { PersonneFormComponent } from './personne/personne-form/personne-form.co
 import { PersonneDashboardComponent } from './personne/personne-dashboard/personne-dashboard.component';
 import { PartenaireFinancierComponent } from './partenaire-financier/partenaire-financier.component';
 import { FinanceComponent } from './finance/finance.component';
+import { ProjetEnCoursComponent } from './volontaire/projet/projet-en-cours/projet-en-cours.component';
+import { ProjetExpireComponent } from './volontaire/projet/projet-expire/projet-expire.component';
 
 
 
@@ -50,8 +52,8 @@ const appRoutes: Routes = [
   
   {path: 'projets', component: ProjetComponent},
   {path: 'projet/new', component: ProjetFormComponent},
-  {path: 'detailsProjet', component: DetailsProjetComponent},
-
+  {path: 'projets/encours', component: ProjetEnCoursComponent},
+  {path: 'detailsProjet/:projet', component: DetailsProjetComponent},
   {path: 'homes', component: HomeComponent},
   {path: 'regions', component: RegionComponent},
   {path: 'region/new', component: RegionFormComponent},
@@ -106,7 +108,10 @@ const appRoutes: Routes = [
     PersonLoginComponent,
     PersonneDashboardComponent,
     PartenaireFinancierComponent,
-    FinanceComponent
+    FinanceComponent,
+    ProjetEnCoursComponent,
+    ProjetExpireComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -114,15 +119,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({
-      // set defaults here
-      radius: 100,
-      outerStrokeWidth: 16,
-      innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
-      animationDuration: 300,
-    }),
+    
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -132,7 +129,8 @@ const appRoutes: Routes = [
     PersonneService,
     SpecialiteService,
     CandidatureService,
-    StructureAccueilService
+    StructureAccueilService,
+    DatePipe
     
   ],
   bootstrap: [AppComponent]
