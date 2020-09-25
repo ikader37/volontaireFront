@@ -1,0 +1,125 @@
+<div>
+
+  <div class="card o-hidden border-0 shadow-lg my-4 col-lg-12 ">
+    <div class="card-body p-0 ">
+      <!-- Nested Row within Card Body -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="p-5">
+            <div class="text-center .bg-gradient-success">
+              <h1 class="h4 text-gray-900 mb-4 ">Formulaire de soummission d'une structure d'accueil
+              </h1>
+            </div>
+
+            <div class="px-3 py-5 bg-gradient-danger text-white" *ngIf="submitted && erreur">
+              <p>
+                Une erreur a survenu lors de l'enregistrement.Veuillez reessayer svp.
+              </p>
+            </div>
+            <div class="px-3 py-5 bg-gradient-success text-white" *ngIf="submitted && !erreur">
+              <p>
+                Enregistrement reussi avec succes.
+                <br />
+                Nous vous contacterons pour la suite.
+              </p>
+            </div>
+            <form class="user" (ngSubmit)="onSubmit()">
+
+
+              <div class="form-group row">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Nom</label>
+                  <input type="text" id="nom" required [(ngModel)]="partenaireFinancier.nom" name="nom"
+                    class=" form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-sm-4">
+                  <label style="margin-left: 20px;">Adresse</label>
+                  <input type="text" id="libelle" required [(ngModel)]="partenaireFinancier.adresse" name="adresse"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+
+                </div>
+
+
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <label style="margin-left: 20px;">Téléphone1</label>
+                    <input type="tel" id="tel" required [(ngModel)]="partenaireFinancier.tel1" name="telephone"
+                      class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <label style="margin-left: 20px;">Téléphone2</label>
+                    <input type="tel" id="tel2" required [(ngModel)]="partenaireFinancier.tel2" name="tel2"
+                      class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                  </div>
+
+
+
+                </div>
+
+
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Email</label>
+                  <input type="email" id="email" required [(ngModel)]="partenaireFinancier.email" name="email"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                </div>
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Site web</label>
+                  <input type="text" id="siteweb" required [(ngModel)]="partenaireFinancier.siteWeb" name="siteWeb"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                </div>
+
+
+              </div>
+
+
+
+
+              <div class="form-group row">
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Document de la structure()</label>
+                  <!-- <input type="file" name="fichier"
+                    class="form-control form-control-user text-center .text-gray-900" id="fichier"
+                    [ngModelOptions]="{standalone: true}" placeholder=""> -->
+                </div>
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label for="libelle" style="margin-left: 20px;">Commune</label>
+                  <select (change)="choixCommune($event)" [(ngModel)]="region">
+                    <option>Selectionner une region</option>
+                    <option *ngFor="let region of listRegions" [value]="region.codeRegion">{{region.libelle}}</option>
+
+                  </select>
+
+                </div>
+
+
+              </div>
+
+              <hr>
+              <div class="form-group row">
+                <div class="col-sm-4">
+                  <button class="btn btn-danger btn-user btn-block " [routerLink]="[ '/structures' ]">
+                    Annuler
+                  </button>
+                </div>
+                <div class="col-sm-4">
+                  <button type="submit" class="btn btn-primary btn-user btn-block ">
+                    Soumettre
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
