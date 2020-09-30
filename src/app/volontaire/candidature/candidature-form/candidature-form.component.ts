@@ -4,7 +4,7 @@ import { Region } from 'src/app/Models/Region.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegionService } from 'src/app/services/administrationServices/region.service';
 import { CandidatureService } from 'src/app/services/volontaire/candidature.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SpecialiteService } from 'src/app/services/volontaire/specialite.service';
 import { Specialite } from 'src/app/Models/Specialite.model';
 import { PersonneService } from 'src/app/services/volontaire/personne.service';
@@ -35,7 +35,7 @@ export class CandidatureFormComponent implements OnInit {
   candidature: Candidature = new Candidature();
   affecter: "VOLONTAIREAFFEC0125478";
 
-  constructor( private fb: FormBuilder, private httpClient:HttpClient,private personneService: PersonneService, private specialiteservice: SpecialiteService ,private regionService:RegionService, private candidatureService:CandidatureService,private projetService: ProjetService, private router: Router) { }
+  constructor( private fb: FormBuilder, private httpClient:HttpClient,private personneService: PersonneService, private specialiteservice: SpecialiteService ,private regionService:RegionService, private candidatureService:CandidatureService,private projetService: ProjetService, private router: Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
     this.onPreCond();
@@ -51,6 +51,13 @@ export class CandidatureFormComponent implements OnInit {
     this.getListRegion();
     this.getListPersonne();
     this.getListProjet();
+
+    this.activatedRoute.params.subscribe(
+      data=>{
+        this.candidature.projet.codeProjet=data["projet"];
+      }
+
+    );
   }
 
   save() {
@@ -74,13 +81,14 @@ export class CandidatureFormComponent implements OnInit {
     //this.structureAccueil.region=this.region;
    console.log("REGION :"+this.region);
    console.log("Personne :"+this.personne);
-   console.log("Projet :"+this.projet);
+  // console.log("Projet :"+this.projet);
    console.log("Spec :"+this.specialite);
    this.submitted=true;
    this.candidature.specialite.codeSpecialite = this.specialite;
    this.candidature.personne.codePersonne = this.personne;
    this.candidature.region.codeRegion = this.region;
-   this.candidature.projet.codeProjet = this.projet;
+  // this.candidature.projet.codeProjet = this.projet;
+   this.candidature.dateDepot=new Date();
    this.save();    
  }
 

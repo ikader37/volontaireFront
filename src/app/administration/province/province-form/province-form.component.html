@@ -25,7 +25,7 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                       <label for="libelle">Region</label>
-                      <select type="text" required class="form-control border-left-success" id="libelleregion"
+                      <select type="text" required class="form-control form-control-user border-left-success" id="libelleregion"
                           [(ngModel)]="region.codeRegion"  [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let r of ListRegions" value="TEst" >{{r.codeRegion }}
                         </option>

@@ -1,41 +1,42 @@
 <div class="container-fluid">
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      
-      <div class="right">
-         <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" >
-      <div class="input-group">
-        <input type="text" class="form-control bg-light border-4 small border-left-primary" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary " style="margin-right: 10px;" type="button">
-            <i class="fas fa-search fa-sm"></i>
-          </button>
-          <button class="btn btn-warning btn-circle" style="margin-right: 10px;"itle="Actualiser"
-          ng-click="refresh()">
-          <span class="fas fa-sync"></span>
-        </button>
 
-        <button class="btn btn-primary btn-circle" [routerLink]="[ '/region', 'new' ]" style="margin-right: 10px;" title="Nouveau"
-          >
-          <span class="fas fa-plus"></span>
-        </button>
-        <button class="btn btn-danger btn-circle" style="margin-right: 10px;" title="Supp"
-          (ng-click)="deleteRegion(r.id)">
-          <span class="fas fa-trash"></span>
-        </button>
-        </div>
-      </div>
-  
-    </form>
-      
-        
+      <div class="right">
+        <!-- Topbar Search -->
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <div class="input-group">
+            <input type="text" class="form-control bg-light border-4 small border-left-primary"
+              placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary " style="margin-right: 10px;" type="button">
+                <i class="fas fa-search fa-sm"></i>
+              </button>
+              <button class="btn btn-warning btn-circle" style="margin-right: 10px;" itle="Actualiser"
+                ng-click="refresh()">
+                <span class="fas fa-sync"></span>
+              </button>
+
+              <button class="btn btn-primary btn-circle" [routerLink]="[ '/region', 'new' ]" style="margin-right: 10px;"
+                title="Nouveau">
+                <span class="fas fa-plus"></span>
+              </button>
+              <button class="btn btn-danger btn-circle" style="margin-right: 10px;" title="Supp"
+                (ng-click)="deleteRegion(r.id)">
+                <span class="fas fa-trash"></span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+
       </div>
     </div>
     <div class="card-body">
     </div>
   </div>
-  
+
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Listes des régions</h6>
@@ -45,8 +46,7 @@
         <table class="table table-bordered .spacer" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <td><input type="checkbox" class="select-all"
-                ng-model="r.isDelete">
+              <td><input type="checkbox" class="select-all" ng-model="r.isDelete">
               <th>Code Région</th>
               <th>Libelle</th>
               <th align="center">Actif</th>
@@ -56,8 +56,7 @@
           </thead>
           <tfoot>
             <tr>
-              <td><input type="checkbox" class="select-all"
-                ng-model="r.isDelete">
+              <td><input type="checkbox" class="select-all" ng-model="r.isDelete">
               <th>Code Région</th>
               <th>Région</th>
               <th align="center">Actif</th>
@@ -72,16 +71,14 @@
               <td>{{r.libelle}} </td>
               <td align="center">True</td>
               <td align="center">
-                <button type="button" 
-												data-toggle="modal" data-target="#myModal"
-												class="btn btn-primary btn-center btn-circle btn-sm"
-												title="D&eacute;tails">
-												<span class="fas fa-edit"></span>
-                      </button>
-                      <button class="btn btn-danger btn-circle" style="margin-right: 10px;" title="Supp"
-                      (ng-click)="deleteRegion(r.id)">
-                      <span class="fas fa-trash"></span>
-                    </button>
+                <button type="button" data-toggle="modal" data-target="#myModal"
+                  class="btn btn-primary btn-center btn-circle btn-sm" title="D&eacute;tails">
+                  <span class="fas fa-edit"></span>
+                </button>
+                <button class="btn btn-danger btn-circle" style="margin-right: 10px;" title="Supp"
+                  (ng-click)="deleteRegion(r.id)">
+                  <span class="fas fa-trash"></span>
+                </button>
               </td>
             </tr>
           </tbody>

@@ -1,13 +1,13 @@
 <div>
 
-    <div class="card o-hidden border-0 shadow-lg my-4 col-lg-12 ">
+    <div class=" .bg-gradient-info card o-hidden border-0 shadow-lg my-4 col-lg-8 login">
       <div class="card-body p-0 ">
         <!-- Nested Row within Card Body -->
         <div class="row">
           <div class="col-lg-12">
             <div class="p-5">
               <div class="text-center .bg-gradient-success">
-                <h1 class="h4 text-gray-900 mb-4 ">Creation de compte
+                <h1 class="h4 text-gray-900 mb-4 ">Création d'un compte
                 </h1>
               </div>
   
@@ -30,14 +30,14 @@
                 </div>
                 
   
-                <div class="form-group row">
+                <div class="form-group row ">
   
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
                     <label style="margin-left: 20px;">Nom</label>
                     <input type="text" id="nom" required [(ngModel)]="personne.nom" name="nom"
                     class=" form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
                      </div>  
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
                     <label style="margin-left: 20px;">Prénom(s)</label>
                     <input type="text" id="prenom" required [(ngModel)]="personne.prenom" name="prenom"
                       class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
@@ -49,13 +49,13 @@
   
                 <div class="form-group row">
   
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
                     <label   style="margin-left: 20px;" >Email</label>
                     <input type="email" id="email" required [(ngModel)]="personne.email" name="email"
                       class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                       >
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-6">
                     <label style="margin-left: 20px;" >Téléphone</label>
                     <input type="tel" id="tel" required [(ngModel)]="personne.tel1" name="tel"
                       class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
@@ -68,13 +68,13 @@
   
                 <div class="form-group row">
   
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <label   style="margin-left: 20px;" >Mot dee passe</label>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label   style="margin-left: 20px;" >Mot de passe</label>
                     <input type="password" id="password" required [(ngModel)]="personne.motDePasse" name="password"
                       class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                       >
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-6">
                     <label style="margin-left: 20px;" >Repeter le mot de passe</label>
                     <input type="password" id="password2" required [(ngModel)]="motDePasse" name="password2"
                       class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
@@ -85,7 +85,7 @@
                 </div>
                
                 <hr>
-                <div class="form-group row">
+                <div class="form-group row buttom">
                   <div class="col-sm-4">
                     <button class="btn btn-danger btn-user btn-block " [routerLink]="[ '/structures' ]">
                       Annuler

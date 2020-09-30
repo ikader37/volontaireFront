@@ -4,7 +4,7 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3">
      
-      <a  class="btn btn-primary btn-circle btn-sm-3" [routerLink]="[ '/commune', 'new' ]" >
+      <a  class="btn btn-primary btn-circle btn-sm-3" [routerLink]="[  ]" >
         <i class="fas fa-plus"></i>
       </a>
     </div>
@@ -14,97 +14,36 @@
   </div>
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Listes des Communes</h6>
+      <h6 class="m-0 font-weight-bold text-uppercase text-primary">Mes Candidatures</h6>
     </div>
     <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-          <thead>
-            <tr>
-              <th>select</th>
-              <th>ID</th>
-              <th>Code Commune</th>
-              <th>Libelle</th>
-              <th>Actif</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th>select</th>
-              <th>ID</th>
-              <th>Code Commune</th>
-              <th>Libelle</th>
-              <th>Actif</th>
-            </tr>
-          </tfoot>
-          <tbody>
-
-            <tr>
-              <td>Angelica Ramos</td>
-              <td>Chief Executive Officer (CEO)</td>
-              <td>47</td>
-              <td>London</td>
-              
-              <td>2009/10/09</td>
-            </tr>
-            <tr>
-              <td>Gavin Joyce</td>
-              <td>Developer</td>
-              <td>42</td>
-              <td>Edinburgh</td>
-             
-              <td>2010/12/22</td>
-            </tr>
-            <tr>
-              <td>Jennifer Chang</td>
-              <td>Regional Director</td>
-              <td>28</td>
-              <td>Singapore</td>
-              
-              <td>2010/11/14</td>
-            </tr>
-            <tr>
-              <td>Brenden Wagner</td>
-              <td>Software Engineer</td>
-              <td>28</td>
-              <td>San Francisco</td>
-              
-              <td>2011/06/07</td>
-            </tr>
-            <tr>
-              <td>Fiona Green</td>
-              <td>Chief Operating Officer (COO)</td>
-              <td>48</td>
-              <td>San Francisco</td>
-              
-              <td>2010/03/11</td>
-            </tr>
-            <tr>
-              <td>Shou Itou</td>
-              <td>Regional Marketing</td>
-              <td>20</td>
-              <td>Tokyo</td>
-              
-              <td>2011/08/14</td>
-            </tr>
-            <tr>
-              <td>Michelle House</td>
-              <td>Integration Specialist</td>
-              <td>37</td>
-              <td>Sidney</td>
-              
-              <td>2011/06/02</td>
-            </tr>
-            <tr>
-              <td>Suki Burks</td>
-              <td>Developer</td>
-              <td>53</td>
-              <td>London</td>
-             
-              <td>2009/10/22</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-6  mb-2" *ngFor="let cand of ListCandidatures">
+          <div class="card border-left-primary shadow h-100 py-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-3 mb-2 mb-sm-0">
+                     <!-- <a [routerLink]="[ '/detailsProjet', projet.codeProjet ]"
+                        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                          class="fas fa-user fa-sm text-red-50"></i> Détails</a>-->
+                    </div>
+                    <div class="col-sm-4">
+                      <h5> {{ cand.projet.libelle }} </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
     </div>

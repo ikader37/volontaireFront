@@ -12,7 +12,6 @@
   <title>SGSV</title>
 
 
-
 </head>
 
 <body id="page-top">
@@ -84,7 +83,6 @@
         </div>
       </li>
 
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -144,20 +142,39 @@
 
       <!-- Main Content -->
       <div id="content">
-
+       
         <!-- Topbar -->
-        <nav  *ngIf="loginService.isUserLoggedIn()" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav  class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow " style="background-color: rgb(248, 242, 234);">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: rgb(12, 2, 68); margin-inline-start: -25px;  margin-bottom: 10px; padding-top: 45px;"  href="index.html" >
+            
+            <div *ngIf="!loginService.isUserLoggedIn()"   class="navbar-brand-text mx-3 text-gray-100 ">
+              <h4 >
+                VOLONTAIRE <sup>1</sup>
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-
-
+              </h4>
+            
+            </div>
+          </a> 
+          <button class="btn btn-link  rounded-circle mr-3">
+            <i class="fa fa-bars"> </i>
+          </button>       <!-- Sidebar Toggle (Topbar) -->
+          
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item dropdown  ">
+              <a  *ngIf="!loginService.isUserLoggedIn()" class="nav-link" [routerLink]="[ '/personne', 'new' ]" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                <h6 style="color: rgb(13, 190, 13);">
+                  Créer un Compte
+                </h6>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a  *ngIf="!loginService.isUserLoggedIn()"class="nav-link text-gray-100" routerLink="/login" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                <h6 style="color: rgb(13, 190, 13);">
+                  Connexion
+                </h6>
+              </a>
+            </li>
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
@@ -339,7 +356,6 @@
               </div>
             </li>
 
-            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
 
 
           </ul>
@@ -359,14 +375,15 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <footer *ngIf="loginService.isUserLoggedIn()" class="sticky-footer bg-white">
+      <!-- Footer 
+      <footer *ngIf="!loginService.isUserLoggedIn()" class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Volontaire 2020</span>
           </div>
         </div>
       </footer>
+      -->
       <!-- End of Footer -->
 
     </div>

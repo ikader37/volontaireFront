@@ -2,13 +2,17 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 
+
 .login {
   width: 400px;
   margin: 16px auto;
+  margin-bottom: 25px;
   font-size: 16px;
+
 }
 .card {
-    background: rgb(187, 218, 247);
+    background:rgb(243, 245, 245);
+    
 
 }
 
@@ -23,21 +27,20 @@
   margin-right: auto;
   margin-left: auto;
   border: 12px solid transparent;
-  border-bottom-color: rgb(15, 66, 107);
+  border-bottom-color: rgb(230, 240, 248);
 }
 
 .login-header {
-  background: rgb(33, 138, 236);
   padding: 20px;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
+  color: rgb(20, 8, 8);
 }
 
 .login-container {
-  background: #ebebeb;
+  background: #fff;
   padding: 12px;
 }
 

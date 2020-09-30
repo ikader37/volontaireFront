@@ -32,6 +32,8 @@ export class ProjetFormComponent implements OnInit {
   save(){
     this.projetService.createProjet(this.projet).subscribe(data=>{
 
+
+      console.log("Place:"+this.projet.nbreFile);
       console.log("DATA:"+data);
      if(data["status"]=="OK"){
        this.erreur=false;

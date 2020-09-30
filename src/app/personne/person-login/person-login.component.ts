@@ -20,7 +20,7 @@ export class PersonLoginComponent implements OnInit {
 
   personneTrouver:Personne=new Personne();
 
-  constructor(private personneService:PersonneService,private hashWordService:HashWordService,private router:Router,private sessionStorage:Storage) { }
+  constructor(private personneService:PersonneService,private hashWordService:HashWordService,private router:Router) { }
 
   ngOnInit() {
     this.submitted=false;
@@ -46,8 +46,8 @@ export class PersonLoginComponent implements OnInit {
 
           console.log("Login reussit");
           this.router.navigate(['/personne/dashboard']);
-          this.sessionStorage.setItem("email",this.personneTrouver.email);
-          this.sessionStorage.setItem("codePersonne",this.personneTrouver.codePersonne);
+          // this.sessionStorage.setItem("email",this.personneTrouver.email);
+          // this.sessionStorage.setItem("codePersonne",this.personneTrouver.codePersonne);
         }else{
           console.log("login echoue");
         }

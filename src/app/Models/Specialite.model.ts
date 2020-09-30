@@ -2,7 +2,7 @@ import { Candidature } from './Candidature.model';
 
 export class Specialite{
     
-	codeSpecialite: string;
+	codeSpecialite: string="";
 	
     libelleLong: string;
     

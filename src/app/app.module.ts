@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +15,7 @@ import { ProvinceComponent } from './administration/province/province.component'
 import { ProvinceFormComponent } from './administration/province/province-form/province-form.component';
 import { CommuneComponent } from './administration/commune/commune.component';
 import { ComuneFormComponent } from './administration/commune/comune-form/comune-form.component';
-import { PathLocationStrategy } from '@angular/common';
+import { DatePipe, PathLocationStrategy } from '@angular/common';
 import { StructureComponent } from './structure/structure.component';
 
 import { RegionService } from './services/administrationServices/region.service';
@@ -42,6 +41,8 @@ import { PersonneFormComponent } from './personne/personne-form/personne-form.co
 import { PersonneDashboardComponent } from './personne/personne-dashboard/personne-dashboard.component';
 import { PartenaireFinancierComponent } from './partenaire-financier/partenaire-financier.component';
 import { FinanceComponent } from './finance/finance.component';
+import { ProjetEnCoursComponent } from './volontaire/projet/projet-en-cours/projet-en-cours.component';
+import { ProjetExpireComponent } from './volontaire/projet/projet-expire/projet-expire.component';
 import { AuthGaurdService } from './services/administrationServices/auth-gaurd.service';
 import { LoginComponent } from './administration/login/login.component';
 import { LogoutComponent } from './administration/logout/logout.component';
@@ -53,9 +54,10 @@ const appRoutes: Routes = [
   
   {path: 'projets', component: ProjetComponent, canActivate:[AuthGaurdService]},
   {path: 'projet/new', component: ProjetFormComponent, canActivate:[AuthGaurdService]},
-  {path: 'detailsProjet', component: DetailsProjetComponent, canActivate:[AuthGaurdService]},
-
-  {path: 'homes', component: HomeComponent, canActivate:[AuthGaurdService]},
+ // {path: 'detailsProjet', component: DetailsProjetComponent, canActivate:[AuthGaurdService]},
+  {path: 'projets/encours', component: ProjetEnCoursComponent,canActivate:[AuthGaurdService]},
+  {path: 'detailsProjet/:projet', component: DetailsProjetComponent},
+  {path: 'homes', component: HomeComponent},
   {path: 'regions', component: RegionComponent, canActivate:[AuthGaurdService]},
   {path: 'region/new', component: RegionFormComponent, canActivate:[AuthGaurdService]},
   {path: 'provinces', component: ProvinceComponent, canActivate:[AuthGaurdService]},
@@ -67,11 +69,11 @@ const appRoutes: Routes = [
   {path: 'specialites', component: SpecialiteComponent, canActivate:[AuthGaurdService]},
   {path: 'specialite/new', component: SpecialiteFormComponent, canActivate:[AuthGaurdService]},
   {path: 'personnes', component: PersonneComponent, canActivate:[AuthGaurdService]},
-  {path: 'personne/new', component: PersonneFormComponent, canActivate:[AuthGaurdService]},
+  {path: 'personne/new', component: PersonneFormComponent},
   {path: 'personne/edit', component: EditPersonneComponent, canActivate:[AuthGaurdService]},
   {path: 'personne/login', component: PersonLoginComponent, canActivate:[AuthGaurdService]},
   {path: 'candidatures', component: CandidatureComponent, canActivate:[AuthGaurdService]},
-  {path: 'candidature/new', component: CandidatureFormComponent , canActivate:[AuthGaurdService]},
+  {path: 'candidature/new/:projet', component: CandidatureFormComponent , canActivate:[AuthGaurdService]},
   {path: 'structure/login', component: LoginstructureComponent, canActivate:[AuthGaurdService] },
   {path: 'personne/dashboard', component: PersonneDashboardComponent , canActivate:[AuthGaurdService]},
   {path: 'partenaireFinancier/new', component: PartenaireFinancierComponent, canActivate:[AuthGaurdService] },
@@ -112,8 +114,10 @@ const appRoutes: Routes = [
     PersonneDashboardComponent,
     PartenaireFinancierComponent,
     FinanceComponent,
+    ProjetEnCoursComponent,
+    ProjetExpireComponent,
     LoginComponent,
-    LogoutComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -121,15 +125,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({
-      // set defaults here
-      radius: 100,
-      outerStrokeWidth: 16,
-      innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
-      animationDuration: 300,
-    }),
+    
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -139,7 +135,8 @@ const appRoutes: Routes = [
     PersonneService,
     SpecialiteService,
     CandidatureService,
-    StructureAccueilService
+    StructureAccueilService,
+    DatePipe
     
   ],
   bootstrap: [AppComponent]

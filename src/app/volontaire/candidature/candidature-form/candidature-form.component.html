@@ -12,9 +12,21 @@
             </div>
             <form class="user" (ngSubmit)="onSubmit()">
               <div class="form-group row" *ngFor="let c of candidat1 ">
+
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Nom</label>
+                  <input type="text" id="nom" required [(ngModel)]="candidature.personne.nom" name="nom"
+                  class=" form-control form-control-user text-center" [ngModelOptions]="{standalone: true}">
+                   </div>  
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                  <label style="margin-left: 20px;">Prénom(s)</label>
+                  <input type="text" id="prenom" required [(ngModel)]="candidature.personne.prenom" name="prenom"
+                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
+                    >
+                </div>  
                 <div class="col-sm-4">
-                  <label style="margin-left: 20px;" >Statut</label>
-                  <input type="text" id="statut" required [(ngModel)]="candidature.statut" name="statut"
+                  <label style="margin-left: 20px;" >Sexe</label>
+                  <input type="text" id="libelle" required [(ngModel)]="candidature.personne.sexe" name="libelle"
                     class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
                     >
                 </div>
@@ -30,12 +42,6 @@
                   </select>
                 </div>
                 <div class="col-sm-4 mb-3 mb-sm-0">
-                  <label style="margin-left: 20px;" >Date Dépot</label>
-                  <input type="date" [(ngModel)]="candidature.dateDepot" name="date"
-                    class="form-control form-control-user text-center" id="date"
-                    [ngModelOptions]="{standalone: true}" placeholder="">
-                </div>
-                <div class="col-sm-4 mb-3 mb-sm-0">
                   <label  for="nompersonne" style="margin-left: 20px;" >Nom</label>
                   <select class=" form-control" (change)="choixPersonne($event)" [(ngModel)]="personne">
                     <option>Selectionner une personne</option>
@@ -46,14 +52,7 @@
              
               <div class="form-group row">
 
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                  <label  for="projet" style="margin-left: 20px;" >Projet</label>
-                  <select class=" form-control" (change)="choixProjet($event)" [(ngModel)]="projet">
-                    <option>Selectionner un Projet</option>
-                    <option *ngFor="let projet of ListProjets" [value]="projet.codeProjet" >{{projet.libelle}}</option>
-                  </select>
-                  
-                </div>
+                
                 <div class="col-sm-4 mb-3 mb-sm-0">
                   <label  for="libelleregion" style="margin-left: 20px;" >Région</label>
                   <select class=" form-control" (change)="choixRegion($event)" [(ngModel)]="region">
@@ -62,23 +61,17 @@
                   </select>
                   
                 </div>
-                <div class="col-sm-4">
-                  <label style="margin-left: 20px;" >Téléphone</label>
-                  <input type="text" id="tel" required [(ngModel)]="telephone" name="tel"
-                    class="form-control form-control-user text-center" [ngModelOptions]="{standalone: true}"
-                  >
-                </div>
               </div>
               <hr>
               <div class="form-group row">
                 <div class="col-sm-4">
-                  <button class="btn btn-danger btn-user btn-block " [routerLink]="[ '/candidatures' ]">
+                  <button class="btn btn-danger btn-user btn-block " [routerLink]="[ '/projets' ]">
                     Annuler
                   </button>
                 </div>
                 <div class="col-sm-4">
                   <button type="submit" class="btn btn-primary btn-user btn-block ">
-                    Soumettre
+                    Candidater
                   </button>
                 </div>
 

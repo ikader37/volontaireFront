@@ -4,7 +4,7 @@ export class Projet{
      codeProjet: string;
      libelle : string;
      nbreFile: string;
-     fichier : string;
+     fichier : string; 
     datedebut: Date; 
     datefin: Date;
     status : string;

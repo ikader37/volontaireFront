@@ -1,21 +1,28 @@
-
+<div class="body">
   <div class="col-xl-10 col-lg-12 col-md-9 mb-4 login">
     <div class="card shadow h-100 py-2">
       <div class="card-body">
-        <h2 class="login-header">S'identifier</h2>
+        <h2 class="login-header">Projet Volontaire</h2>
+
         <form class="login-container">
           <div>
-            <i class="fas fa-user-alt"></i> Utilisateur: <input class="form-control form-control-user " type="text" name="username"
-              [(ngModel)]="username">
-              
-            <i class="fa fa-lock" style="font-size:15px;color:rgb(15, 14, 14)"></i> Mot de Passe : <input class="form-control form-control-user " type="password" name="password"
-              [(ngModel)]="password">
+            <i class="fas fa-user-alt"></i> Nom d'utilisateur: <input class="form-control form-control-user "
+              type="text" name="username" [(ngModel)]="username">
+            <br>
+
+            <i class="fa fa-lock" style="font-size:15px;color:rgb(15, 14, 14)"></i> Mot de Passe : <input
+              class="form-control form-control-user " type="password" name="password" [(ngModel)]="password">
           </div>
+          <br>
+          <hr>
           <p>
-            <input type="submit" (click)=checkLogin() value="Connexion">
+            <input type="submit"  (click)=checkLogin() value="Connexion">
           </p>
         </form>
+        <hr>
+        <span style="margin-left: 50px;">Copyright &copy; Volontaire 2020</span>
+
       </div>
     </div>
   </div>
-
+</div>
